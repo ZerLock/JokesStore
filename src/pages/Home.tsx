@@ -42,9 +42,10 @@ const Home = (): JSX.Element => {
                 >
                     <Center display="flex" flexDirection="column">
                         <Text marginBottom="2%">{joke}</Text>
-                        <Button bg="red.500" _hover={{bg:"red.600"}}>Save</Button>
+                        <Button bg="red.500" _hover={{bg:"red.600"}}>🤍 Save</Button>
                     </Center>
                 </Box>
+                <Button position="fixed" bottom="1%" right="1%" >💾 Saved jokes</Button>
             </Center>
         </>
     );
