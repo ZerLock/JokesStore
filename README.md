@@ -1,18 +1,30 @@
 > If you see this section, you've just created a repository using [PoC Innovation's Open-Source project template](https://github.com/PoCInnovation/open-source-project-template). Check the [getting started guide](./.github/getting-started.md).
 
-# [PROJECT'S NAME]
+# JokesStore
 
-[Project's description]
+A ReactTS web application to get jokes, save them and retrieve them on a special page
 
 ## How does it work?
 
-[Explain how this project is working]
+Two pages, one that get randomly jokes with an API request. And the second one is to retrive your saves jokes that save the joke ID.
 
 ## Getting Started
 
 ### Installation
 
-[Explain how to install all of the project's dependencies]
+**1) Install Docker**  
+Follow this [official guide](https://docs.docker.com/get-docker/) to install Docker.  
+If you want to play a little bit with Docker, you can follow this [tutorial](https://docker-curriculum.com) or even our [workshop](https://github.com/PoCInnovation/Workshops/tree/master/software/04.Docker) !
+
+**2) Install JokesStore**
+```
+# Get the project
+git clone git@github.com:ZerLock/JokesStore.git
+cd JokesStore
+
+# Build JokesStore docker image
+docker build . -t jokes:latest
+```
 
 ### Quickstart
 
@@ -20,7 +32,11 @@
 
 ### Usage
 
-[Explain how to use this project]
+Run JokesStore
+```
+# Run JokesStore docker image
+docker run -p 3000:3000 jokes:latest
+```
 
 ## Get involved
 
@@ -31,11 +47,11 @@ If you're interested in how the project is organized at a higher level, please c
 ## Our PoC team :heart:
 
 Developers
-| [<img src="https://github.com/MrZalTy.png?size=85" width=85><br><sub>[Developer's name]</sub>](https://github.com/MrZalTy) | [<img src="https://github.com/MrZalTy.png?size=85" width=85><br><sub>[Developer's name]</sub>](https://github.com/MrZalTy) | [<img src="https://github.com/MrZalTy.png?size=85" width=85><br><sub>[Developer's name]</sub>](https://github.com/MrZalTy)
-| :---: | :---: | :---: |
+| [<img src="https://github.com/ZerLock.png?size=85" width=85><br><sub>[Dubosclard Léo]</sub>](https://github.com/ZerLock)
+| :---: |
 
 Manager
-| [<img src="https://github.com/adrienfort.png?size=85" width=85><br><sub>[Manager's name]</sub>](https://github.com/adrienfort)
+| [<img src="https://github.com/adrienfort.png?size=85" width=85><br><sub>[El magnífico Adrien]</sub>](https://github.com/adrienfort)
 | :---: |
 
 <h2 align=center>
