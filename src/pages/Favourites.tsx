@@ -18,16 +18,6 @@ const Favourites = (): JSX.Element => {
         })();
     }, []);
 
-    const swipeToPrev = () => {
-        console.log("Prev");
-        swipe.slidePrev();
-    }
-
-    const swipeToNext = () => {
-        console.log("Next");
-        swipe.slideNext();
-    }
-
     return (
         <>
             <Center
@@ -35,7 +25,11 @@ const Favourites = (): JSX.Element => {
                 h="100vh"
             >
                 <Link to="/">
-                    <Button position="fixed" top="1%" left="1%">
+                    <Button
+                        position="fixed"
+                        top="1%"
+                        left="1%"
+                    >
                         <HStack spacing="5%">
                             <FontAwesomeIcon icon={faChevronLeft} />
                             <Text>Back to Home</Text>
@@ -58,7 +52,12 @@ const Favourites = (): JSX.Element => {
                                     fontSize="3xl"
                                     marginTop="2%"
                                 >
-                                    <Text w="75%" padding="5%" bg="blue.500" borderRadius="25px">
+                                    <Text
+                                        w="75%"
+                                        padding="5%"
+                                        bg="blue.500"
+                                        borderRadius="25px"
+                                    >
                                         {joke}
                                     </Text>
                                 </Center>

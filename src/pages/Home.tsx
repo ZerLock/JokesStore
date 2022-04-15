@@ -67,7 +67,7 @@ const Home = (): JSX.Element => {
                 flexDirection="column"
                 h='100vh'
             >
-                <Text fontWeight="bold" fontSize="5xl">We have a joke for you !</Text>
+                <Text fontWeight="bold" fontSize="5xl" top="20%" position="fixed">We have a joke for you !</Text>
                 <Box
                     w="50%"
                     bg="blue.500"
@@ -76,11 +76,17 @@ const Home = (): JSX.Element => {
                     fontSize="3xl"
                     padding="2%"
                     margin="3%"
+                    maxHeight="30%"
                 >
                     <Center display="flex" flexDirection="column">
                         <Text marginBottom="2%">{joke}</Text>
                         <HStack spacing="5%" display="flex">
-                            <Button disabled={saved.includes(joke)} onClick={() => saveJoke()} bg="red.500" _hover={{bg:"red.600"}}>
+                            <Button
+                                disabled={saved.includes(joke)}
+                                onClick={() => saveJoke()}
+                                bg="red.500"
+                                _hover={{bg:"red.600"}}
+                            >
                                 <HStack spacing="5%">
                                     <FontAwesomeIcon icon={faHeart} />
                                     <Text>Save</Text>
