@@ -9,3 +9,23 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: white;
+    background-color: #edf2f7;
+    border-radius: 25%;
+    right:10px;
+    padding: 30px;
+    color: #000 !important;
+    fill: black !important;
+    stroke: black !important;
+}
+
+.swiper-button-next {
+    margin-right: 30px;
+}
+
+.swiper-button-prev {
+    margin-left: 30px;
+}

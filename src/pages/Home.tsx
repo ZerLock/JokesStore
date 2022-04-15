@@ -6,15 +6,21 @@ import { faFloppyDisk, faArrowRotateBack, faHeart } from '@fortawesome/free-soli
 import * as env from 'env-var';
 import axios from 'axios';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Home = (): JSX.Element => {
 
-    const [ joke, setJoke ] = useState('');
+    const [ joke, setJoke ] = useState<string>("");
+    const [ saved, setSaved ] = useState<string>("");
 
     useEffect(() => {
         (async () => {
             await refreshJoke();
             if (!localStorage.getItem("savedJokes"))
-                localStorage.setItem("savedJokes", "[]");
+                localStorage.setItem("savedJokes", "");
+            else
+                setSaved(localStorage.getItem("savedJokes") || "");
         })();
     }, []);
 
@@ -44,6 +50,15 @@ const Home = (): JSX.Element => {
         return newJoke;
     }
 
+    const saveJoke = () => {
+        localStorage.setItem("savedJokes", saved + joke + "|");
+        setSaved((saved + joke + "|").toString());
+        console.log(saved);
+        toast.success('Joke saved!', {
+            position: "top-right",
+        })
+    }
+
     return (
         <>
             <Center
@@ -65,7 +80,7 @@ const Home = (): JSX.Element => {
                     <Center display="flex" flexDirection="column">
                         <Text marginBottom="2%">{joke}</Text>
                         <HStack spacing="5%" display="flex">
-                            <Button bg="red.500" _hover={{bg:"red.600"}}>
+                            <Button disabled={saved.includes(joke)} onClick={() => saveJoke()} bg="red.500" _hover={{bg:"red.600"}}>
                                 <HStack spacing="5%">
                                     <FontAwesomeIcon icon={faHeart} />
                                     <Text>Save</Text>
@@ -93,6 +108,7 @@ const Home = (): JSX.Element => {
                     </Button>
                 </Link>
             </Center>
+            <ToastContainer />
         </>
     );
 };
