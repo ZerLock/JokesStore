@@ -76,7 +76,6 @@ const Home = (): JSX.Element => {
                     fontSize="3xl"
                     padding="2%"
                     margin="3%"
-                    maxHeight="30%"
                 >
                     <Center display="flex" flexDirection="column">
                         <Text marginBottom="2%">{joke}</Text>
