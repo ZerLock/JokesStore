@@ -1,5 +1,3 @@
-> If you see this section, you've just created a repository using [PoC Innovation's Open-Source project template](https://github.com/PoCInnovation/open-source-project-template). Check the [getting started guide](./.github/getting-started.md).
-
 # JokesStore
 
 A ReactTS web application to get jokes, save them and retrieve them on a special page
